@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 st.set_page_config(page_title = "Pomodoro Technique", layout = "wide", initial_sidebar_state = "collapsed")
 
 class Pomodoro:
-    def study(self, study=25):
+    def study(self, study=25*60):
         header = st.empty()
         pom = st.empty()
         with header:
@@ -23,7 +23,7 @@ class Pomodoro:
         self.autoplay_audio("New_Project2.mp3")
         pom.empty()
         header.empty()
-    def rest(self, rest=5):
+    def rest(self, rest=5*60):
         header = st.empty()
         pom = st.empty()
         with header:
