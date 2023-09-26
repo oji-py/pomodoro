@@ -7,38 +7,6 @@ from PIL import Image, ImageOps
 st.set_page_config(page_title = "Pomodoro Technique", layout = "wide", initial_sidebar_state = "collapsed")
 
 class Pomodoro:
-    def study(self, study=25*60):
-        header = st.empty()
-        pom = st.empty()
-        with header:
-            st.header("Study Timer")
-        with pom:
-            while study >= 0:
-                countdown = str(timedelta(seconds=study))
-                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
-                study -= 1
-                t.sleep(0.01)
-            st.success("Rest Time!")
-        st.balloons()
-        self.autoplay_audio("New_Project2.mp3")
-        pom.empty()
-        header.empty()
-    def rest(self, rest=5*60):
-        header = st.empty()
-        pom = st.empty()
-        with header:
-            st.header("Rest Timer")
-        with pom:
-            while rest >= 0:
-                countdown = str(timedelta(seconds=rest))
-                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
-                rest -= 1
-                t.sleep(0.01)
-            st.success("Study Time!")
-        st.balloons()
-        self.autoplay_audio("New_Project.mp3")
-        pom.empty()
-        header.empty()
     def autoplay_audio(self, file_path: str):
         sound = st.empty()
         with sound:
@@ -56,6 +24,39 @@ class Pomodoro:
                 )
         t.sleep(13)
         sound.empty()
+    def study(self, study=25*60):
+        header = st.empty()
+        pom = st.empty()
+        with header:
+            st.header("Study Timer")
+        with pom:
+            while study >= 0:
+                countdown = str(timedelta(seconds=study))
+                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
+                study -= 1
+                t.sleep(1)
+            st.success("Rest Time!")
+        st.balloons()
+        self.autoplay_audio("New_Project2.mp3")
+        pom.empty()
+        header.empty()
+    def rest(self, rest=5*60):
+        header = st.empty()
+        pom = st.empty()
+        with header:
+            st.header("Rest Timer")
+        with pom:
+            while rest >= 0:
+                countdown = str(timedelta(seconds=rest))
+                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
+                rest -= 1
+                t.sleep(1)
+            st.success("Study Time!")
+        st.balloons()
+        self.autoplay_audio("New_Project.mp3")
+        pom.empty()
+        header.empty()
+   
 
 st.title("Pomodoro Technique")
 st.markdown("*Made by Ezra for my love!! <33*")
