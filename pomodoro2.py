@@ -72,7 +72,7 @@ st.caption("""
 st.write("_"*50)
 # main program
 col1, col2 = st.columns([40, 70])
-with col2:
+with col1:
     start = st.button("Start")
 col3, col4 = st.columns([50, 50], gap="large")
 with col3:
