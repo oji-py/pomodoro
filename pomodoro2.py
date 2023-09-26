@@ -17,7 +17,7 @@ class Pomodoro:
                 countdown = str(timedelta(seconds=study))
                 st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
                 study -= 1
-                t.sleep(1)
+                t.sleep(0.01)
             st.success("Rest Time!")
         st.balloons()
         self.autoplay_audio("New_Project2.mp3")
@@ -33,7 +33,7 @@ class Pomodoro:
                 countdown = str(timedelta(seconds=rest))
                 st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
                 rest -= 1
-                t.sleep(1)
+                t.sleep(0.01)
             st.success("Study Time!")
         st.balloons()
         self.autoplay_audio("New_Project.mp3")
