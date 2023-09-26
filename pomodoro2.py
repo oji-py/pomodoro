@@ -15,7 +15,7 @@ class Pomodoro:
         with pom:
             while study >= 0:
                 countdown = str(timedelta(seconds=study))
-                st.metric("Time Remaining", value=f"{countdown:0>8}")
+                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
                 study -= 1
                 t.sleep(1)
             st.success("Rest Time!")
@@ -31,7 +31,7 @@ class Pomodoro:
         with pom:
             while rest >= 0:
                 countdown = str(timedelta(seconds=rest))
-                st.metric("Time Remaining", value=f"{countdown:0>8}")
+                st.metric("⏳Time Remaining", value=f"{countdown:0>8}")
                 rest -= 1
                 t.sleep(1)
             st.success("Study Time!")
@@ -83,7 +83,7 @@ with col4:
     counter = 0
     empty = st.empty()
     header = "Study Timer"
-    while start:
+    if start:
         if counter == 4:
             main.study()
             main.rest(rest=25*60)
