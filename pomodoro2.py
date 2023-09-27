@@ -7,23 +7,23 @@ from PIL import Image, ImageOps
 st.set_page_config(page_title = "Pomodoro Technique", layout = "wide", initial_sidebar_state = "collapsed")
 
 class Pomodoro:
-    def autoplay_audio(self, file_path: str):
-        sound = st.empty()
-        with sound:
-            with open(file_path, "rb") as f:
-                data = f.read()
-                b64 = base64.b64encode(data).decode()
-                md = f"""
-                    <audio autoplay="true">
-                    <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-                    </audio>
-                    """
-                st.markdown(
-                    md,
-                    unsafe_allow_html=True,
-                )
-        t.sleep(13)
-        sound.empty()
+    # def autoplay_audio(self, file_path: str):
+    #     sound = st.empty()
+    #     with sound:
+    #         with open(file_path, "rb") as f:
+    #             data = f.read()
+    #             b64 = base64.b64encode(data).decode()
+    #             md = f"""
+    #                 <audio autoplay="true">
+    #                 <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+    #                 </audio>
+    #                 """
+    #             st.markdown(
+    #                 md,
+    #                 unsafe_allow_html=True,
+    #             )
+    #     t.sleep(13)
+    #     sound.empty()
     def study(self, study=25*60):
         header = st.empty()
         pom = st.empty()
@@ -37,7 +37,7 @@ class Pomodoro:
                 t.sleep(1)
             st.success("Rest Time!")
         st.balloons()
-        self.autoplay_audio("New_Project2.mp3")
+        # self.autoplay_audio("New_Project2.mp3")
         pom.empty()
         header.empty()
     def rest(self, rest=5*60):
@@ -53,7 +53,7 @@ class Pomodoro:
                 t.sleep(1)
             st.success("Study Time!")
         st.balloons()
-        self.autoplay_audio("New_Project.mp3")
+        # self.autoplay_audio("New_Project.mp3")
         pom.empty()
         header.empty()
    
