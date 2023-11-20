@@ -83,13 +83,13 @@ with col3:
     header = "Study Timer"
     if counter > 4:
             if study:
-                study()
+                main.study()
             if rest: 
-                rest(rest = 15*60)
+                main.rest(rest = 15*60)
     if study:
-            study()
+            main.study()
     if rest:
-            rest()  
+            main.rest()  
     counter += 1
 
 # st.markdown("__"*50)
