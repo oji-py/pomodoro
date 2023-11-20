@@ -78,18 +78,18 @@ with col1:
     
 col3, col4 = st.columns([50, 50], gap="large")
 with col3:
-    main = Pomodoro()
+    pom = Pomodoro()
     counter = 0
     header = "Study Timer"
     if counter > 4:
             if start:
-                main.study()
+                pom.study()
             if start: 
-                main.rest(rest = 15*60)
+                pom.rest(rest = 15*60)
     if start:
-            main.study()
+            pom.study()
     if start:
-            main.rest()  
+            pom.rest()  
     counter += 1
 
 # st.markdown("__"*50)
