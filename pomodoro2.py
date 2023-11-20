@@ -37,7 +37,7 @@ class Pomodoro:
                 t.sleep(1)
             st.success("Rest Time!")
         st.balloons()
-        # self.autoplay_audio("New_Project2.mp3")
+        self.autoplay_audio("New_Project2.mp3")
         pom.empty()
         header.empty()
     def rest(self, rest=5*60):
@@ -53,7 +53,7 @@ class Pomodoro:
                 t.sleep(1)
             st.success("Study Time!")
         st.balloons()
-        # self.autoplay_audio("New_Project.mp3")
+        self.autoplay_audio("New_Project.mp3")
         pom.empty()
         header.empty()
    
@@ -74,20 +74,23 @@ st.write("_"*50)
 # main program
 col1, col2 = st.columns([40, 70])
 with col1:
-    start = st.button("Start")
+    study = st.button("Start Study Timer")
+    rest = st.button("Start Rest Timer")
 col3, col4 = st.columns([50, 50], gap="large")
 with col3:
     main = Pomodoro()
     counter = 0
     header = "Study Timer"
-    if start:
-        if counter == 4:
-            main.study()
-            main.rest(rest=25*60)
-        else:
-            main.study()
-            main.rest()
-        counter += 1
+    if counter > 4:
+            if study:
+                study()
+            if rest: 
+                rest(rest = 15*60)
+    if study:
+            study()
+    if rest:
+            rest()  
+    counter += 1
 
 # st.markdown("__"*50)
 # st.header("Pics Together <33")
