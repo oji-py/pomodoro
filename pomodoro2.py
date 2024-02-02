@@ -81,14 +81,12 @@ with col3:
     pom = Pomodoro()
     counter = 0
     header = "Study Timer"
-    if counter > 4:
-            if start:
-                pom.study()
-            if start: 
-                pom.rest(rest = 15*60)
     if start:
-            pom.study()
+        pom.study()
     if start:
+        if counter > 4:
+            pom.rest(rest = 15*60)
+        else:
             pom.rest()  
     counter += 1
 
