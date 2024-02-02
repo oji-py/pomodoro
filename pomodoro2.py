@@ -83,11 +83,13 @@ with col3:
     header = "Study Timer"
     if start:
         pom.study()
+        start = False
     if start:
         if counter > 4:
             pom.rest(rest = 15*60)
         else:
             pom.rest()  
+        start = False
     counter += 1
 
 # st.markdown("__"*50)
