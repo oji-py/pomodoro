@@ -74,24 +74,24 @@ st.write("_"*50)
 # main program
 col1, col2 = st.columns([40, 70])
 with col1:
-    start = st.button("Start Timer")
+    start1 = st.button("Start Study Timer")
+with col2:
+    start2 = st.button("Start Rest Timer")
     
 col3, col4 = st.columns([50, 50], gap="large")
 with col3:
     pom = Pomodoro()
     counter = 0
     header = "Study Timer"
-    turn = 1
-    if start and turn == 1:
+    if start1:
         pom.study()
-        start = False
-        turn = 2
-    if start and turn == 2:
+        start1 = False
+    if start2:
         if counter > 4:
             pom.rest(rest = 15*60)
         else:
             pom.rest()  
-        start = False
+        start2 = False
         turn = 1
     counter += 1
 
