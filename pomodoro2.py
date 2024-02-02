@@ -81,15 +81,18 @@ with col3:
     pom = Pomodoro()
     counter = 0
     header = "Study Timer"
-    if start:
+    turn = 1
+    if start and turn == 1:
         pom.study()
         start = False
-    if start:
+        turn = 2
+    if start and turn == 2:
         if counter > 4:
             pom.rest(rest = 15*60)
         else:
             pom.rest()  
         start = False
+        turn = 1
     counter += 1
 
 # st.markdown("__"*50)
